@@ -24,9 +24,10 @@ body {
 
 .app-container {
     display: flex;
+    flex-direction: row;
     height: 100vh;
     width: 100vw;
-    overflow: hidden; /* This keeps everything contained in one screen */
+    overflow: hidden;
 }
 
 /* Server Sidebar */
@@ -140,9 +141,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
-    min-width: 0;
+    min-width: 0; /* Prevents chat from pushing the sidebar off-screen */
 }
-
 .chat-header {
     height: var(--header-height);
     display: flex;
@@ -197,11 +197,10 @@ body {
 .member-sidebar {
     width: 240px;
     background-color: var(--bg-secondary);
-    flex-shrink: 0; /* CRITICAL: This forces the sidebar to stay at 240px */
+    flex-shrink: 0; /* Prevents the sidebar from squishing */
     display: flex;
     flex-direction: column;
     padding: 24px 8px;
-    border-left: 1px solid rgba(255,255,255,0.05); /* Subtle divider like your reference */
 }
 
 .member-group {
