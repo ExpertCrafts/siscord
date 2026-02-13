@@ -23,8 +23,9 @@ body {
 }
 
 .app-container {
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Forces everything onto one line */
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -137,11 +138,11 @@ body {
 
 /* Chat Area */
 .chat-area {
-    flex: 1;
+    flex: 1 !important; /* Grows to fill available space */
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
-    min-width: 0; /* Prevents chat from pushing the sidebar off-screen */
+    min-width: 0 !important; /* Allows it to shrink so sidebar fits */
 }
 .chat-header {
     height: var(--header-height);
@@ -165,7 +166,8 @@ body {
 
 .message {
     display: flex;
-    margin-bottom: 20px;
+    padding: 2px 16px;
+    margin-bottom: 15px;
 }
 
 .author {
@@ -185,19 +187,19 @@ body {
 
 .input-area input {
     width: 100%;
-    background-color: #383a40; /* Darker grey from the real UI */
+    background-color: #383a40; 
     border: none;
-    padding: 11px 16px;
+    padding: 12px 16px;
     border-radius: 8px;
     color: #dbdee1;
-    font-size: 1rem;
+    outline: none;
 }
 
 /* Member Sidebar */
 .member-sidebar {
-    width: 240px;
+    width: 240px !important;
     background-color: var(--bg-secondary);
-    flex-shrink: 0; /* Prevents the sidebar from squishing */
+    flex-shrink: 0 !important; /* Prevents it from disappearing/dropping */
     display: flex;
     flex-direction: column;
     padding: 24px 8px;
