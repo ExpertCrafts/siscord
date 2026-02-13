@@ -3,70 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siscord | Dashboard</title>
+    <title>Siscord</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
         <nav class="server-sidebar">
-            <div class="server-icon home-icon" style="background-color: #134081;">S</div>
+            <div class="server-wrapper active">
+                <div class="pill"></div>
+                <div class="server-icon home-icon" style="background-color: #5865f2;">S</div>
+            </div>
             <div class="separator"></div>
-            <div class="server-icon">G1</div>
-            <div class="server-icon">G2</div>
-            <div class="server-icon plus-icon">+</div>
+            <div class="server-wrapper">
+                <div class="pill"></div>
+                <div class="server-icon" style="background-color: #313338;">G1</div>
+            </div>
+            <div class="server-wrapper">
+                <div class="pill"></div>
+                <div class="server-icon" style="background-color: #313338;">G2</div>
+            </div>
+            <div class="server-icon plus-icon"><span>+</span></div>
         </nav>
 
         <aside class="channel-sidebar">
             <header class="sidebar-header">
-                <h3>Siscord Server</h3>
+                <h3>A Sample Server</h3>
             </header>
             <div class="channel-list">
                 <div class="category">TEXT CHANNELS</div>
-                <div class="channel active"># general</div>
-                <div class="channel"># development</div>
-                <div class="channel"># design-assets</div>
+                <div class="channel active">
+                    <span class="hash">#</span> general
+                </div>
+                <div class="channel">
+                    <span class="hash">#</span> marketing
+                </div>
                 <div class="category">VOICE CHANNELS</div>
-                <div class="channel">🔊 Lounge</div>
-                <div class="channel">🔊 Gaming</div>
+                <div class="channel">
+                    <span class="speaker">🔊</span> General
+                </div>
             </div>
             <div class="user-control">
-                <div class="user-avatar" style="background-color: #f8d8b0;"></div>
+                <div class="user-avatar-wrapper">
+                    <div class="user-avatar" style="background-color: #f8d8b0;"></div>
+                    <div class="status-dot online"></div>
+                </div>
                 <div class="user-info">
-                    <span class="username">User123</span>
-                    <span class="status">#0001</span>
+                    <span class="username">NickfromUn...</span>
+                    <span class="status-tag">#7773</span>
+                </div>
+                <div class="user-actions">
+                    <span class="icon-small">🎙️</span>
+                    <span class="icon-small">🎧</span>
+                    <span class="icon-small">⚙️</span>
                 </div>
             </div>
         </aside>
 
-        <main class="chat-area">
+        <main class="main-content">
             <header class="chat-header">
-                <span class="hash">#</span>
+                <span class="header-hash">#</span>
                 <h4>general</h4>
             </header>
-            <div class="message-list">
-                <div class="message">
-                    <div class="message-avatar" style="background-color: #0a2852;"></div>
-                    <div class="message-content">
-                        <span class="author">Lead Dev</span>
-                        <span class="timestamp">Today at 12:45 PM</span>
-                        <p>Welcome to Siscord! Check the hex codes in the styles.</p>
+            
+            <div class="welcome-screen">
+                <div class="welcome-container">
+                    <h1>Welcome to<br>A Sample Discord Server</h1>
+                    <p class="welcome-sub">This is your brand new, shiny server. Here are some steps to help you get started.</p>
+                    
+                    <div class="welcome-card">
+                        <div class="card-icon" style="background-color: #eb459e;">👥</div>
+                        <div class="card-text">Invite your friends</div>
+                        <div class="card-arrow">›</div>
+                    </div>
+                    <div class="welcome-card">
+                        <div class="card-icon" style="background-color: #5865f2;">🎨</div>
+                        <div class="card-text">Personalize your server with an icon</div>
+                        <div class="card-arrow check">✓</div>
+                    </div>
+                    <div class="welcome-card">
+                        <div class="card-icon" style="background-color: #fee75c;">👋</div>
+                        <div class="card-text">Send your first message</div>
+                        <div class="card-arrow">›</div>
                     </div>
                 </div>
             </div>
-            <div class="input-area">
-                <input type="text" placeholder="Message #general">
+
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <div class="plus-circle">+</div>
+                    <input type="text" placeholder="Message #general">
+                    <div class="input-icons">
+                        <span>🎁</span>
+                        <span>GIF</span>
+                        <span>📄</span>
+                        <span>😀</span>
+                    </div>
+                </div>
             </div>
         </main>
 
         <aside class="member-sidebar">
-            <div class="member-group">ONLINE — 2</div>
+            <div class="member-group">ONLINE — 1</div>
             <div class="member-item">
-                <div class="member-avatar" style="background-color: #303031;"></div>
-                <span>Lead Dev</span>
-            </div>
-            <div class="member-item">
-                <div class="member-avatar" style="background-color: #f8d8b0;"></div>
-                <span>User123</span>
+                <div class="member-avatar-wrapper">
+                    <div class="member-avatar" style="background-color: #faa61a;"></div>
+                    <div class="status-dot online"></div>
+                </div>
+                <span class="member-name">NickfromUnito</span>
+                <span class="crown">👑</span>
             </div>
         </aside>
     </div>
