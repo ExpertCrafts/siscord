@@ -217,3 +217,26 @@ body {
 .member-item:hover {
     background-color: rgba(255,255,255,0.05);
 }
+
+/* Paste this at the very end of style.css */
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Tighter message spacing */
+    overflow-y: auto;
+}
+
+.input-area form {
+    width: 100%;
+}
+
+.input-area input:focus {
+    outline: none;
+    background-color: #404042; /* Slightly lighter on focus */
+}
+
+/* Ensure the newest messages are smooth when they appear */
+#message-list {
+    scroll-behavior: smooth;
+}
