@@ -140,6 +140,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
+    min-width: 0; /* This prevents the chat from pushing the sidebar off-screen */
 }
 
 .chat-header {
@@ -196,7 +197,9 @@ body {
     width: 240px;
     background-color: var(--bg-secondary);
     padding: 24px 8px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Add this line */
+    display: flex;
+    flex-direction: column;
 }
 
 .member-group {
