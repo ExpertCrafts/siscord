@@ -8,35 +8,54 @@
 </head>
 <body>
      <div class="app-container">
-        <nav class="server-sidebar">
-            <div class="server-icon home-icon" style="background-color: #134081;">S</div>
-            <div class="separator"></div>
-            <div class="server-icon">G1</div>
-            <div class="server-icon">G2</div>
-            <div class="server-icon plus-icon">+</div>
-        </nav>
+    <nav class="server-sidebar">
+        <div class="server-icon home-icon" style="background-color: #134081;">S</div>
+        <div class="separator"></div>
+        <div class="server-icon">G1</div>
+        <div class="server-icon">G2</div>
+        <div class="server-icon plus-icon">+</div>
+    </nav>
 
-        <aside class="channel-sidebar">
-            <header class="sidebar-header">
-                <h3>Siscord Server</h3>
-            </header>
-            <div class="channel-list">
-                <div class="category">TEXT CHANNELS</div>
-                <div class="channel active"># general</div>
-                <div class="channel"># development</div>
-                <div class="channel"># design-assets</div>
-                <div class="category">VOICE CHANNELS</div>
-                <div class="channel">🔊 Lounge</div>
-                <div class="channel">🔊 Gaming</div>
+    <aside class="channel-sidebar">
+        <header class="sidebar-header">
+            <h3>Siscord Server</h3>
+        </header>
+        <div class="channel-list">
+            <div class="category">TEXT CHANNELS</div>
+            <div class="channel active"># general</div>
+            <div class="channel"># development</div>
+        </div>
+        <div class="user-control">
+            <div class="user-avatar" style="background-color: #f8d8b0;"></div>
+            <div class="user-info">
+                <span class="username">User123</span>
+                <span class="status">#0001</span>
             </div>
-            <div class="user-control">
-                <div class="user-avatar" style="background-color: #f8d8b0;"></div>
-                <div class="user-info">
-                    <span class="username">User123</span>
-                    <span class="status">#0001</span>
-                </div>
+        </div>
+    </aside>
+
+    <main class="chat-area">
+        <header class="chat-header">
+            <span class="hash">#</span>
+            <h4>general</h4>
+        </header>
+        <div class="message-list" id="message-list">
             </div>
-        </aside>
+        <div class="input-area">
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Message #general" autocomplete="off">
+            </form>
+        </div>
+    </main>
+
+    <aside class="member-sidebar">
+        <div class="member-group">ONLINE — 2</div>
+        <div class="member-item">
+            <div class="member-avatar" style="background-color: #303031;"></div>
+            <span>Lead Dev</span>
+        </div>
+    </aside>
+</div>
 
         <main class="chat-area">
             <header class="chat-header">
