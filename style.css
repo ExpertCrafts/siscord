@@ -26,6 +26,7 @@ body {
     display: flex;
     height: 100vh;
     width: 100vw;
+    overflow: hidden; /* This keeps everything contained in one screen */
 }
 
 /* Server Sidebar */
