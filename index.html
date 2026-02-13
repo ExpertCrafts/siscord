@@ -43,20 +43,22 @@
                 <span class="hash">#</span>
                 <h4>general</h4>
             </header>
-            <div class="message-list">
-                <div class="message">
-                    <div class="message-avatar" style="background-color: #0a2852;"></div>
-                    <div class="message-content">
-                        <span class="author">Lead Dev</span>
-                        <span class="timestamp">Today at 12:45 PM</span>
-                        <p>Welcome to Siscord! Check the hex codes in the styles.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="input-area">
-                <input type="text" placeholder="Message #general">
-            </div>
-        </main>
+            <div class="message-list" id="message-list">
+    <div class="message">
+        <div class="message-avatar" style="background-color: #0a2852;"></div>
+        <div class="message-content">
+            <span class="author">Lead Dev</span>
+            <span class="timestamp">Today at 12:45 PM</span>
+            <p>Welcome to Siscord! Type something below to test the chat.</p>
+        </div>
+    </div>
+</div>
+
+<div class="input-area">
+    <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Message #general" autocomplete="off">
+    </form>
+</div>
 
         <aside class="member-sidebar">
             <div class="member-group">ONLINE — 2</div>
@@ -70,5 +72,42 @@
             </div>
         </aside>
     </div>
+<script>
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const messageList = document.getElementById('message-list');
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevents page reload
+
+        const messageText = chatInput.value.trim();
+        
+        if (messageText !== "") {
+            // Get current time
+            const now = new Date();
+            const timestamp = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            // Create message HTML structure
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            
+            messageDiv.innerHTML = `
+                <div class="message-avatar" style="background-color: #f8d8b0;"></div>
+                <div class="message-content">
+                    <span class="author">User123</span>
+                    <span class="timestamp">Today at ${timestamp}</span>
+                    <p>${messageText}</p>
+                </div>
+            `;
+
+            // Add to list and clear input
+            messageList.appendChild(messageDiv);
+            chatInput.value = "";
+
+            // Auto-scroll to bottom
+            messageList.scrollTop = messageList.scrollHeight;
+        }
+    });
+</script>
 </body>
 </html>
