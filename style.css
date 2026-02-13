@@ -140,7 +140,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-primary);
-    min-width: 0; /* This prevents the chat from pushing the sidebar off-screen */
+    min-width: 0;
 }
 
 .chat-header {
@@ -179,27 +179,29 @@ body {
 }
 
 .input-area {
-    padding: 0 20px 24px 20px;
+    padding: 0 16px 24px 16px;
+    background-color: var(--bg-primary);
 }
 
 .input-area input {
     width: 100%;
-    background-color: #38383a;
+    background-color: #383a40; /* Darker grey from the real UI */
     border: none;
-    padding: 12px 16px;
+    padding: 11px 16px;
     border-radius: 8px;
-    color: var(--text-main);
-    outline: none;
+    color: #dbdee1;
+    font-size: 1rem;
 }
 
 /* Member Sidebar */
 .member-sidebar {
     width: 240px;
     background-color: var(--bg-secondary);
-    padding: 24px 8px;
-    flex-shrink: 0; /* Add this line */
+    flex-shrink: 0; /* CRITICAL: This forces the sidebar to stay at 240px */
     display: flex;
     flex-direction: column;
+    padding: 24px 8px;
+    border-left: 1px solid rgba(255,255,255,0.05); /* Subtle divider like your reference */
 }
 
 .member-group {
@@ -243,4 +245,8 @@ body {
 /* Ensure the newest messages are smooth when they appear */
 #message-list {
     scroll-behavior: smooth;
+}
+
+.message:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
