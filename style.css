@@ -1,17 +1,12 @@
 :root {
-    --bg-servers: #1e1f22;
-    --bg-channels: #2b2d31;
-    --bg-main: #313338;
-    --bg-members: #2b2d31;
-    --bg-user-panel: #232428;
-    --bg-modifier-selected: #3f4147;
-    --bg-modifier-hover: #35373c;
-    --bg-input: #383a40;
-    --bg-card: #2b2d31;
-    --text-normal: #dbdee1;
-    --text-muted: #949ba4;
-    --text-header: #ffffff;
-    --font-primary: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+    --bg-primary: #303031;
+    --bg-secondary: #252526;
+    --bg-tertiary: #1e1e1f;
+    --accent-blue: #134081;
+    --dark-blue: #0a2852;
+    --text-main: #f8d8b0;
+    --text-muted: #8e9297;
+    --header-height: 48px;
 }
 
 * {
@@ -21,13 +16,10 @@
 }
 
 body {
-    font-family: var(--font-primary);
-    background-color: var(--bg-servers);
-    color: var(--text-normal);
-    height: 100vh;
-    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-primary);
     overflow: hidden;
-    line-height: 1.2;
 }
 
 .app-container {
@@ -36,122 +28,94 @@ body {
     width: 100vw;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: #1a1b1e;
-    border-radius: 10px;
-}
-
-/* 1. Server Sidebar (Narrowest) */
+/* Server Sidebar */
 .server-sidebar {
     width: 72px;
-    background-color: var(--bg-servers);
+    background-color: var(--bg-tertiary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 12px 0;
+    padding-top: 12px;
     flex-shrink: 0;
 }
 
 .server-icon {
     width: 48px;
     height: 48px;
+    background-color: var(--bg-primary);
     border-radius: 50%;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: var(--text-header);
-    background-color: var(--bg-main);
-    font-weight: 500;
+    transition: border-radius 0.2s;
 }
 
 .server-icon:hover {
-    border-radius: 16px;
-    background-color: #5865f2;
+    border-radius: 30%;
+    background-color: var(--accent-blue);
 }
 
 .separator {
     width: 32px;
     height: 2px;
-    background-color: #35363c;
+    background-color: var(--bg-secondary);
     margin-bottom: 8px;
 }
 
-/* 2. Channel Sidebar (Medium) */
+/* Channel Sidebar */
 .channel-sidebar {
     width: 240px;
-    background-color: var(--bg-channels);
+    background-color: var(--bg-secondary);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
 }
 
 .sidebar-header {
-    height: 48px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     padding: 0 16px;
-    font-weight: 600;
-    color: var(--text-header);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.02);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    font-size: 15px;
 }
 
 .channel-list {
     flex: 1;
-    padding: 12px 8px;
-    overflow-y: auto;
+    padding: 10px 8px;
 }
 
 .category {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: bold;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin: 16px 8px 4px 8px;
+    margin: 18px 0 8px 8px;
 }
 
 .channel {
     padding: 6px 8px;
-    margin: 1px 0;
+    margin: 2px 0;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 15px;
     color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.channel:hover {
-    background-color: var(--bg-modifier-hover);
-    color: var(--text-normal);
-}
-
-.channel.active {
-    background-color: var(--bg-modifier-selected);
-    color: var(--text-header);
+.channel:hover, .channel.active {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--text-main);
 }
 
 .user-control {
     height: 52px;
-    background-color: var(--bg-user-panel);
+    background-color: #202021;
     display: flex;
     align-items: center;
     padding: 0 8px;
 }
 
-.user-avatar {
+.user-avatar, .message-avatar, .member-avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -159,19 +123,9 @@ body {
 }
 
 .user-info {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0;
-}
-
-.username {
     font-size: 13px;
-    font-weight: 600;
-    color: var(--text-header);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .status {
@@ -179,130 +133,77 @@ body {
     color: var(--text-muted);
 }
 
-/* 3. Main Content Area (Largest) */
-.main-content, .chat-area {
+/* Chat Area */
+.chat-area {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-main);
+    background-color: var(--bg-primary);
 }
 
 .chat-header {
-    height: 48px;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     padding: 0 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-    flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
-.hash, .header-hash {
+.hash {
     color: var(--text-muted);
-    font-size: 20px;
+    font-size: 24px;
     margin-right: 8px;
 }
 
-.chat-header h4 {
-    font-size: 15px;
-    color: var(--text-header);
-    font-weight: 600;
-}
-
-/* Welcome Section Refinement */
-.welcome-screen {
+.message-list {
     flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
+    padding: 20px;
     overflow-y: auto;
 }
 
-.welcome-container {
-    max-width: 440px;
-    text-align: center;
+.message {
+    display: flex;
+    margin-bottom: 20px;
 }
 
-.welcome-container h1 {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--text-header);
-    margin-bottom: 12px;
+.author {
+    font-weight: bold;
+    margin-right: 8px;
 }
 
-.welcome-sub {
-    font-size: 15px;
+.timestamp {
+    font-size: 12px;
     color: var(--text-muted);
-    margin-bottom: 24px;
 }
 
-.welcome-card {
-    background-color: var(--bg-card);
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+.input-area {
+    padding: 0 20px 24px 20px;
 }
 
-.welcome-card:hover {
-    background-color: var(--bg-modifier-hover);
-    transform: translateX(4px);
-}
-
-.card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-text {
-    flex: 1;
-    text-align: left;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-/* Input Bar Refinement */
-.input-container, .input-area {
-    padding: 0 16px 24px 16px;
-    flex-shrink: 0;
-}
-
-.input-wrapper, .input-area input {
+.input-area input {
     width: 100%;
-    background-color: var(--bg-input);
+    background-color: #38383a;
     border: none;
-    border-radius: 8px;
     padding: 12px 16px;
-    color: var(--text-normal);
-    font-size: 15px;
+    border-radius: 8px;
+    color: var(--text-main);
     outline: none;
 }
 
-/* 4. Member Sidebar (Slightly narrower than channels) */
+/* Member Sidebar */
 .member-sidebar {
     width: 240px;
-    background-color: var(--bg-members);
-    display: flex;
-    flex-direction: column;
-    padding: 12px 8px;
+    background-color: var(--bg-secondary);
+    padding: 24px 8px;
     flex-shrink: 0;
 }
 
 .member-group {
-    font-size: 11px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: bold;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    margin: 12px 8px 4px 8px;
+    margin-bottom: 8px;
+    padding-left: 8px;
 }
 
 .member-item {
@@ -311,26 +212,8 @@ body {
     padding: 6px 8px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.2s ease;
 }
 
 .member-item:hover {
-    background-color: var(--bg-modifier-hover);
-}
-
-.member-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 12px;
-}
-
-.member-item span, .member-name {
-    font-size: 15px;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-.member-item:hover span {
-    color: var(--text-normal);
+    background-color: rgba(255,255,255,0.05);
 }
