@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siscord | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="server-sidebar">
+            <div class="server-icon home-icon" style="background-color: #134081;">S</div>
+            <div class="separator"></div>
+            <div class="server-icon">G1</div>
+            <div class="server-icon">G2</div>
+            <div class="server-icon plus-icon">+</div>
+        </nav>
 
+        <aside class="channel-sidebar">
+            <header class="sidebar-header">
+                <h3>Siscord Server</h3>
+            </header>
+            <div class="channel-list">
+                <div class="category">TEXT CHANNELS</div>
+                <div class="channel active"># general</div>
+                <div class="channel"># development</div>
+                <div class="channel"># design-assets</div>
+                <div class="category">VOICE CHANNELS</div>
+                <div class="channel">🔊 Lounge</div>
+                <div class="channel">🔊 Gaming</div>
+            </div>
+            <div class="user-control">
+                <div class="user-avatar" style="background-color: #f8d8b0;"></div>
+                <div class="user-info">
+                    <span class="username">User123</span>
+                    <span class="status">#0001</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <span class="hash">#</span>
+                <h4>general</h4>
+            </header>
+            <div class="message-list">
+                <div class="message">
+                    <div class="message-avatar" style="background-color: #0a2852;"></div>
+                    <div class="message-content">
+                        <span class="author">Lead Dev</span>
+                        <span class="timestamp">Today at 12:45 PM</span>
+                        <p>Welcome to Siscord! Check the hex codes in the styles.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" placeholder="Message #general">
+            </div>
+        </main>
+
+        <aside class="member-sidebar">
+            <div class="member-group">ONLINE — 2</div>
+            <div class="member-item">
+                <div class="member-avatar" style="background-color: #303031;"></div>
+                <span>Lead Dev</span>
+            </div>
+            <div class="member-item">
+                <div class="member-avatar" style="background-color: #f8d8b0;"></div>
+                <span>User123</span>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
