@@ -273,3 +273,30 @@ body {
     transform: scale(1.1);
     transition: transform 0.2s ease;
 }
+
+/* Container for the logo and the word 'Axon' */
+.brand-container {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px; /* Space between logo and text */
+    height: 48px;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Styling the Axon Logo in the header */
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px; /* Slightly rounded corners for a clean look */
+    object-fit: contain;
+}
+
+/* Styling the text to match the gold in your logo */
+.brand-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #f8d8b0; /* Your gold hex code */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
