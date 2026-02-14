@@ -251,3 +251,25 @@ body {
 .message:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+/* This targets the container for your logo */
+.axon-home {
+    background-color: transparent !important; /* Removes the default blue/grey bg */
+    overflow: hidden; /* Clips the image into a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* This targets the actual image inside the container */
+.axon-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the image fill the circle perfectly */
+}
+
+/* Optional: Make it zoom slightly when you hover, like Discord */
+.axon-home:hover img {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
