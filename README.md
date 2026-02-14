@@ -1,1 +1,1 @@
-This is a DISCORD clone for friends
+AXON: The ultimate chat app.
